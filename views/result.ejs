@@ -1,0 +1,22 @@
+<% include header%>
+<div class="container">
+    <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-xs-12 col-sm-12">
+            <div class="jumbotron">
+                <div class="row">
+                    <% Object.keys(teamMembers).forEach(function(key, index) { %>
+                        <div class="col-xs-12 col-sm-6">
+                            <h1>Team <%=index+1%></h1>
+                            <ul class="list-group">
+                                <% teamMembers[key].forEach(function(member) { %>
+                                <li class="list-group-item"><%=member%></li>
+                                <% }); %>
+                            </ul>
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% include footer%>
+</div>
