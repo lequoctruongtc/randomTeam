@@ -12,15 +12,24 @@
                 <div class="form-group">
                   <label for="teams">Number Team</label>
                   <select class="form-control" id="teams" name="teams">
-                    <% for(var i=1; i<=10; i++) { %>
+                    <% for(var i=1; i<=team; i++) { %>
                     <option value='<%= i %>'><%= i %></option>
                     <% } %>
                   </select>
                 </div>
                 <div class="form-group">
+                  <% Array.from(listMember).forEach(function(member) { %>
+                  <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+                      <input class="form-check-input" type="checkbox" name="listMember" id="listMember1" value="<%= member %>"> <%= member %>
+                    </label>
+                  </div>
+                  <% }); %>
+                </div>
+                <!-- <div class="form-group">
                   <label for="listMember">List Member</label>
                   <textarea class="form-control" id="listMember" name="listMember" cols="30" rows="10"></textarea>
-                </div>
+                </div> -->
                 <button type="submit" name="submit" id="submit" class="btn btn-primary btn-xs">Send</button>
                 <!-- <input type="submit" name="submit" id="submit" value="Random"> -->
               </form>
